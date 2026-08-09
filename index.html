@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>NovaSpace</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =================================
+         LOGIN PAGE
+    ================================== -->
+
+    <div id="loginPage">
+
+        <!-- BACKGROUND -->
+
+        <div class="background">
+
+            <div class="orb orb-1"></div>
+
+            <div class="orb orb-2"></div>
+
+            <div class="orb orb-3"></div>
+
+
+            <div class="mouse-light"></div>
+
+
+            <div class="particles">
+
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- LOGIN CONTAINER -->
+
+        <main class="login-container">
+
+            <section class="login-box">
+
+                <div class="glow-border"></div>
+
+
+                <div class="login-content">
+
+
+                    <!-- LOGO -->
+
+                    <div class="logo">
+
+                        <span>🔐</span>
+
+                    </div>
+
+
+                    <!-- TITLE -->
+
+                    <h1>
+                        Welcome Back
+                    </h1>
+
+
+                    <p class="subtitle">
+                        Sign in to continue to NovaSpace
+                    </p>
+
+
+
+                    <!-- LOGIN FORM -->
+
+                    <form id="loginForm">
+
+
+                        <!-- USERNAME -->
+
+                        <div class="input-group">
+
+                            <input
+                                type="text"
+                                id="username"
+                                autocomplete="username"
+                                required
+                            >
+
+                            <label for="username">
+                                Username
+                            </label>
+
+                        </div>
+
+
+
+                        <!-- PASSWORD -->
+
+                        <div class="input-group">
+
+                            <input
+                                type="password"
+                                id="password"
+                                autocomplete="current-password"
+                                required
+                            >
+
+                            <label for="password">
+                                Password
+                            </label>
+
+
+                            <button
+                                type="button"
+                                class="show-password"
+                                id="showPassword"
+                            >
+                                👁
+                            </button>
+
+                        </div>
+
+
+
+                        <!-- OPTIONS -->
+
+                        <div class="options">
+
+
+                            <label class="remember">
+
+                                <input
+                                    type="checkbox"
+                                    id="remember"
+                                >
+
+                                <span>
+                                    Remember me
+                                </span>
+
+                            </label>
+
+
+                            <a
+                                href="#"
+                                id="forgotPassword"
+                            >
+                                Forgot password?
+                            </a>
+
+
+                        </div>
+
+
+
+                        <!-- LOGIN BUTTON -->
+
+                        <button
+                            type="submit"
+                            class="login-btn"
+                            id="loginButton"
+                        >
+
+                            <span>
+                                Sign In
+                            </span>
+
+                        </button>
+
+
+                    </form>
+
+
+
+                    <!-- SIGN UP -->
+
+                    <p class="signup">
+
+                        Don't have an account?
+
+                        <a
+                            href="#"
+                            id="signupLink"
+                        >
+                            Create account
+                        </a>
+
+                    </p>
+
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+
+    <!-- =================================
+         DASHBOARD PAGE
+    ================================== -->
+
+    <div
+        id="dashboardPage"
+        class="dashboard-page"
+    >
+
+
+        <!-- =================================
+             NAVBAR
+        ================================== -->
+
+        <header class="navbar">
+
+
+            <!-- BRAND -->
+
+            <div class="brand">
+
+                <span class="brand-icon">
+                    ✦
+                </span>
+
+                <span>
+                    NovaSpace
+                </span>
+
+            </div>
+
+
+
+            <!-- NAV ACTIONS -->
+
+            <div class="nav-actions">
+
+
+                <!-- NOTIFICATIONS -->
+
+                <button
+                    class="nav-icon"
+                    id="notificationButton"
+                    type="button"
+                >
+
+                    🔔
+
+                    <span
+                        class="notification-badge"
+                        id="notificationBadge"
+                    >
+                        3
+                    </span>
+
+                </button>
+
+
+
+                <!-- NOTIFICATION PANEL -->
+
+                <div
+                    class="notification-panel"
+                    id="notificationPanel"
+                >
+
+                    <div class="notification-title">
+                        Notifications
+                    </div>
+
+
+                    <div class="notification-item">
+
+                        ❤️
+
+                        <span>
+                            Someone liked your post
+                        </span>
+
+                    </div>
+
+
+                    <div class="notification-item">
+
+                        💬
+
+                        <span>
+                            New comment on your post
+                        </span>
+
+                    </div>
+
+
+                    <div class="notification-item">
+
+                        ✨
+
+                        <span>
+                            Welcome to NovaSpace!
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PROFILE -->
+
+                <button
+                    class="nav-profile"
+                    type="button"
+                >
+                    👤
+                </button>
+
+
+
+                <!-- LOGOUT -->
+
+                <button
+                    id="logoutButton"
+                    class="logout-button"
+                    type="button"
+                >
+                    Logout
+                </button>
+
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================
+             DASHBOARD CONTENT
+        ================================== -->
+
+        <main class="dashboard-container">
+
+
+            <!-- =================================
+                 WELCOME CARD
+            ================================== -->
+
+            <section class="welcome-card">
+
+
+                <div>
+
+                    <p class="small-text">
+                        GOOD TO SEE YOU
+                    </p>
+
+
+                    <h1>
+
+                        Welcome,
+
+                        <span id="displayUsername">
+                            User
+                        </span>
+
+                        👋
+
+                    </h1>
+
+
+                    <p>
+                        Share your thoughts and connect
+                        with your community.
+                    </p>
+
+                </div>
+
+
+                <div class="welcome-icon">
+                    ✨
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================
+                 CREATE POST
+            ================================== -->
+
+            <section class="create-post">
+
+
+                <div class="post-user">
+
+
+                    <div class="avatar">
+                        👤
+                    </div>
+
+
+                    <div>
+
+                        <strong id="postUsername">
+                            User
+                        </strong>
+
+
+                        <small>
+                            What's on your mind?
+                        </small>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- POST TEXT -->
+
+                <textarea
+                    id="postInput"
+                    placeholder="Share something with your community..."
+                ></textarea>
+
+
+
+                <!-- POST OPTIONS -->
+
+                <div class="post-actions">
+
+
+                    <button
+                        type="button"
+                        id="photoButton"
+                    >
+                        📷 Photo
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="videoButton"
+                    >
+                        🎥 Video
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="feelingButton"
+                    >
+                        😊 Feeling
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="publishPost"
+                        class="publish-button"
+                    >
+                        Post
+                    </button>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================
+                 FEED
+            ================================== -->
+
+            <section id="feed">
+
+
+
+                <!-- =================================
+                     POST 1
+                ================================== -->
+
+                <article class="post-card">
+
+
+                    <div class="post-header">
+
+
+                        <div class="avatar">
+                            🚀
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                NovaSpace Team
+                            </strong>
+
+
+                            <small>
+                                Just now · 🌎
+                            </small>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <p class="post-text">
+
+                        Welcome to NovaSpace!
+
+                        A modern community where
+                        ideas become something bigger. ✨
+
+                    </p>
+
+
+
+                    <div class="post-stats">
+
+
+                        <span class="like-count">
+                            ❤️ 128
+                        </span>
+
+
+                        <span>
+                            💬 24 comments
+                        </span>
+
+
+                    </div>
+
+
+
+                    <div class="post-buttons">
+
+
+                        <button
+                            type="button"
+                            class="like-button"
+                        >
+                            ❤️ Like
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="comment-button"
+                        >
+                            💬 Comment
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="share-button"
+                        >
+                            ↗ Share
+                        </button>
+
+
+                    </div>
+
+
+
+                    <!-- COMMENTS -->
+
+                    <div class="comment-section">
+
+                        <div class="comments-list"></div>
+
+
+                        <div class="comment-input">
+
+                            <input
+                                type="text"
+                                placeholder="Write a comment..."
+                            >
+
+
+                            <button
+                                type="button"
+                                class="send-comment"
+                            >
+                                ➤
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                </article>
+
+
+
+                <!-- =================================
+                     POST 2
+                ================================== -->
+
+                <article class="post-card">
+
+
+                    <div class="post-header">
+
+
+                        <div class="avatar">
+                            💎
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Creative Hub
+                            </strong>
+
+
+                            <small>
+                                2 hours ago · 🌎
+                            </small>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <p class="post-text">
+
+                        Keep creating.
+                        Keep learning.
+                        Keep improving. 🚀
+
+                    </p>
+
+
+
+                    <div class="post-stats">
+
+
+                        <span class="like-count">
+                            ❤️ 86
+                        </span>
+
+
+                        <span>
+                            💬 15 comments
+                        </span>
+
+
+                    </div>
+
+
+
+                    <div class="post-buttons">
+
+
+                        <button
+                            type="button"
+                            class="like-button"
+                        >
+                            ❤️ Like
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="comment-button"
+                        >
+                            💬 Comment
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="share-button"
+                        >
+                            ↗ Share
+                        </button>
+
+
+                    </div>
+
+
+
+                    <!-- COMMENTS -->
+
+                    <div class="comment-section">
+
+                        <div class="comments-list"></div>
+
+
+                        <div class="comment-input">
+
+                            <input
+                                type="text"
+                                placeholder="Write a comment..."
+                            >
+
+
+                            <button
+                                type="button"
+                                class="send-comment"
+                            >
+                                ➤
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                </article>
+
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

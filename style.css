@@ -1,0 +1,1812 @@
+/* ========================================
+   NOVASPACE PREMIUM SOCIAL UI
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cyan: #00eaff;
+    --blue: #1677ff;
+    --dark: #020912;
+    --dark2: #061827;
+    --white: #ffffff;
+    --muted: rgba(255, 255, 255, 0.58);
+    --border: rgba(255, 255, 255, 0.12);
+}
+
+
+/* ========================================
+   BODY
+======================================== */
+
+body {
+    min-height: 100vh;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    color: var(--white);
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(0, 234, 255, 0.16),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(22, 119, 255, 0.16),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #01060b,
+            #031827,
+            #020912
+        );
+
+    overflow-x: hidden;
+}
+
+
+/* ========================================
+   LOGIN PAGE
+======================================== */
+
+#loginPage {
+    min-height: 100vh;
+    position: relative;
+}
+
+
+/* ========================================
+   BACKGROUND
+======================================== */
+
+.background {
+    position: fixed;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+/* ========================================
+   GLOWING ORBS
+======================================== */
+
+.orb {
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(30px);
+
+    opacity: 0.4;
+
+    animation:
+        floating 9s ease-in-out infinite;
+}
+
+.orb-1 {
+    width: 280px;
+    height: 280px;
+
+    left: -100px;
+    top: -100px;
+
+    background: #00eaff;
+}
+
+.orb-2 {
+    width: 230px;
+    height: 230px;
+
+    right: -80px;
+    top: 25%;
+
+    background: #0066ff;
+
+    animation-delay: 2s;
+}
+
+.orb-3 {
+    width: 260px;
+    height: 260px;
+
+    bottom: -130px;
+    left: 35%;
+
+    background: #00aaff;
+
+    animation-delay: 4s;
+}
+
+@keyframes floating {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(35px, -30px);
+    }
+}
+
+
+/* ========================================
+   MOUSE LIGHT
+======================================== */
+
+.mouse-light {
+    position: fixed;
+
+    width: 320px;
+    height: 320px;
+
+    border-radius: 50%;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0, 234, 255, 0.13),
+            transparent 70%
+        );
+
+    filter: blur(10px);
+
+    pointer-events: none;
+}
+
+
+/* ========================================
+   PARTICLES
+======================================== */
+
+.particles {
+    position: fixed;
+
+    inset: 0;
+
+    overflow: hidden;
+}
+
+.particles span {
+    position: absolute;
+
+    width: 4px;
+    height: 4px;
+
+    border-radius: 50%;
+
+    background: var(--cyan);
+
+    box-shadow:
+        0 0 10px var(--cyan),
+        0 0 20px var(--cyan);
+
+    opacity: 0.5;
+
+    animation:
+        particleFloat 8s linear infinite;
+}
+
+.particles span:nth-child(1) {
+    left: 8%;
+    top: 80%;
+}
+
+.particles span:nth-child(2) {
+    left: 18%;
+    top: 30%;
+    animation-delay: 1s;
+}
+
+.particles span:nth-child(3) {
+    left: 30%;
+    top: 90%;
+    animation-delay: 2s;
+}
+
+.particles span:nth-child(4) {
+    left: 42%;
+    top: 20%;
+    animation-delay: 3s;
+}
+
+.particles span:nth-child(5) {
+    left: 55%;
+    top: 75%;
+    animation-delay: 4s;
+}
+
+.particles span:nth-child(6) {
+    left: 65%;
+    top: 15%;
+    animation-delay: 5s;
+}
+
+.particles span:nth-child(7) {
+    left: 75%;
+    top: 65%;
+    animation-delay: 2s;
+}
+
+.particles span:nth-child😎 {
+    left: 88%;
+    top: 35%;
+    animation-delay: 3s;
+}
+
+.particles span:nth-child(9) {
+    left: 22%;
+    top: 60%;
+    animation-delay: 4s;
+}
+
+.particles span:nth-child(10) {
+    left: 70%;
+    top: 80%;
+    animation-delay: 5s;
+}
+
+.particles span:nth-child(11) {
+    left: 48%;
+    top: 50%;
+    animation-delay: 6s;
+}
+
+.particles span:nth-child(12) {
+    left: 92%;
+    top: 70%;
+    animation-delay: 7s;
+}
+
+@keyframes particleFloat {
+
+    0% {
+        transform:
+            translateY(50px)
+            scale(0.5);
+
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.7;
+    }
+
+    80% {
+        opacity: 0.7;
+    }
+
+    100% {
+        transform:
+            translateY(-160px)
+            scale(1.2);
+
+        opacity: 0;
+    }
+}
+
+
+/* ========================================
+   LOGIN CONTAINER
+======================================== */
+
+.login-container {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    perspective: 1200px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* ========================================
+   LOGIN BOX
+======================================== */
+
+.login-box {
+    position: relative;
+
+    width: 420px;
+
+    padding: 2px;
+
+    border-radius: 30px;
+
+    transform-style: preserve-3d;
+
+    transition:
+        transform 0.15s ease;
+
+    animation:
+        loginEntrance 1s ease;
+
+    box-shadow:
+        0 40px 100px rgba(0, 0, 0, 0.55),
+        0 0 60px rgba(0, 234, 255, 0.08);
+}
+
+
+/* ========================================
+   ROTATING BORDER
+======================================== */
+
+.glow-border {
+    position: absolute;
+
+    inset: -3px;
+
+    border-radius: 32px;
+
+    background:
+        conic-gradient(
+            from 0deg,
+            transparent,
+            var(--cyan),
+            transparent,
+            var(--blue),
+            transparent
+        );
+
+    filter: blur(2px);
+
+    animation:
+        borderSpin 3.5s linear infinite;
+
+    z-index: 0;
+}
+
+@keyframes borderSpin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* ========================================
+   LOGIN GLASS
+======================================== */
+
+.login-content {
+    position: relative;
+
+    z-index: 2;
+
+    padding:
+        50px 44px 40px;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(9, 32, 48, 0.98),
+            rgba(2, 13, 23, 0.99)
+        );
+
+    border:
+        1px solid var(--border);
+
+    backdrop-filter:
+        blur(25px);
+
+    overflow: hidden;
+}
+
+.login-content::before {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 100px;
+
+    top: -80px;
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        rgba(0, 234, 255, 0.20);
+
+    filter: blur(40px);
+}
+
+
+/* ========================================
+   LOGO
+======================================== */
+
+.logo {
+    width: 86px;
+    height: 86px;
+
+    margin:
+        0 auto 24px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0, 234, 255, 0.20),
+            rgba(255, 255, 255, 0.03)
+        );
+
+    border:
+        1px solid rgba(0, 234, 255, 0.45);
+
+    box-shadow:
+        0 0 25px rgba(0, 234, 255, 0.2),
+        inset 0 0 20px rgba(0, 234, 255, 0.08);
+
+    animation:
+        logoPulse 3s ease-in-out infinite;
+}
+
+.logo span {
+    font-size: 36px;
+
+    filter:
+        drop-shadow(
+            0 0 10px rgba(0, 234, 255, 0.7)
+        );
+}
+
+@keyframes logoPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.06);
+    }
+}
+
+
+/* ========================================
+   LOGIN TEXT
+======================================== */
+
+.login-content h1 {
+    text-align: center;
+
+    font-size: 32px;
+
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    text-align: center;
+
+    color: var(--muted);
+
+    font-size: 14px;
+
+    margin-bottom: 38px;
+}
+
+
+/* ========================================
+   INPUTS
+======================================== */
+
+.input-group {
+    position: relative;
+
+    margin-bottom: 24px;
+
+    transition:
+        transform 0.25s ease;
+}
+
+.input-group input {
+    width: 100%;
+
+    height: 58px;
+
+    padding:
+        0 48px 0 18px;
+
+    color: white;
+
+    font-size: 15px;
+
+    outline: none;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 14px;
+
+    background:
+        rgba(255, 255, 255, 0.045);
+
+    transition:
+        0.3s ease;
+}
+
+.input-group input:hover {
+    border-color:
+        rgba(255, 255, 255, 0.25);
+}
+
+.input-group input:focus {
+    border-color:
+        var(--cyan);
+
+    background:
+        rgba(0, 234, 255, 0.05);
+
+    box-shadow:
+        0 0 0 3px rgba(0, 234, 255, 0.07),
+        0 0 25px rgba(0, 234, 255, 0.08);
+}
+
+.input-group label {
+    position: absolute;
+
+    left: 18px;
+    top: 19px;
+
+    color:
+        rgba(255, 255, 255, 0.5);
+
+    font-size: 15px;
+
+    pointer-events: none;
+
+    transition:
+        0.25s ease;
+}
+
+.input-group input:focus ~ label,
+.input-group input:valid ~ label {
+    top: -8px;
+    left: 13px;
+
+    padding:
+        0 7px;
+
+    font-size: 11px;
+
+    color:
+        var(--cyan);
+
+    background:
+        #092333;
+
+    border-radius: 5px;
+}
+
+
+/* ========================================
+   PASSWORD
+======================================== */
+
+.show-password {
+    position: absolute;
+
+    right: 16px;
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    border: none;
+
+    background: transparent;
+
+    color:
+        rgba(255, 255, 255, 0.5);
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+    transition:
+        0.2s ease;
+}
+
+.show-password:hover {
+    color:
+        var(--cyan);
+
+    transform:
+        translateY(-50%) scale(1.1);
+}
+
+
+/* ========================================
+   OPTIONS
+======================================== */
+
+.options {
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items: center;
+
+    margin-bottom: 27px;
+
+    font-size: 12px;
+}
+
+.remember {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color:
+        var(--muted);
+}
+
+.remember input {
+    accent-color:
+        var(--cyan);
+}
+
+.options a {
+    color:
+        var(--cyan);
+
+    text-decoration: none;
+
+    transition:
+        0.2s ease;
+}
+
+.options a:hover {
+    color: white;
+}
+
+
+/* ========================================
+   LOGIN BUTTON
+======================================== */
+
+.login-btn {
+    position: relative;
+
+    width: 100%;
+
+    height: 57px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    color: #02151e;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #9ff5ff
+        );
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.3px;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 30px rgba(0, 234, 255, 0.14);
+
+    transition:
+        0.3s ease;
+}
+
+.login-btn::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 80%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.9),
+            transparent
+        );
+
+    transform:
+        skewX(-20deg);
+
+    transition:
+        left 0.7s ease;
+}
+
+.login-btn:hover::before {
+    left: 140%;
+}
+
+.login-btn:hover {
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 18px 40px rgba(0, 234, 255, 0.22);
+}
+
+.login-btn:active {
+    transform:
+        scale(0.98);
+}
+
+
+/* ========================================
+   SIGNUP
+======================================== */
+
+.signup {
+    text-align: center;
+
+    margin-top: 28px;
+
+    color:
+        var(--muted);
+
+    font-size: 13px;
+}
+
+.signup a {
+    color:
+        var(--cyan);
+
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+.signup a:hover {
+    color: white;
+
+    text-decoration: underline;
+}
+
+
+/* ========================================
+   DASHBOARD
+======================================== */
+
+.dashboard-page {
+    display: none;
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(0, 234, 255, 0.10),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(22, 119, 255, 0.12),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #020912,
+            #061827
+        );
+
+    animation:
+        dashboardEntrance 0.6s ease;
+}
+
+@keyframes dashboardEntrance {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* ========================================
+   NAVBAR
+======================================== */
+
+.navbar {
+    position: sticky;
+
+    top: 0;
+
+    z-index: 20;
+
+    height: 72px;
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items: center;
+
+    padding:
+        0 7%;
+
+    background:
+        rgba(2, 12, 20, 0.80);
+
+    border-bottom:
+        1px solid var(--border);
+
+    backdrop-filter:
+        blur(20px);
+}
+
+.brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 20px;
+
+    font-weight: 700;
+}
+
+.brand-icon {
+    color:
+        var(--cyan);
+
+    font-size: 25px;
+
+    text-shadow:
+        0 0 15px var(--cyan);
+}
+
+.nav-actions {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+/* ========================================
+   NAV BUTTONS
+======================================== */
+
+.nav-icon,
+.nav-profile {
+    position: relative;
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid var(--border);
+
+    background:
+        rgba(255, 255, 255, 0.06);
+
+    color: white;
+
+    cursor: pointer;
+
+    transition:
+        0.2s ease;
+}
+
+.nav-icon:hover,
+.nav-profile:hover {
+    border-color:
+        rgba(0, 234, 255, 0.35);
+
+    background:
+        rgba(0, 234, 255, 0.08);
+
+    transform:
+        translateY(-2px);
+}
+
+.logout-button {
+    padding:
+        9px 16px;
+
+    border-radius: 10px;
+
+    border:
+        1px solid var(--border);
+
+    background:
+        rgba(255, 255, 255, 0.06);
+
+    color: white;
+
+    cursor: pointer;
+
+    transition:
+        0.2s ease;
+}
+
+.logout-button:hover {
+    background:
+        rgba(255, 50, 80, 0.12);
+
+    border-color:
+        rgba(255, 80, 100, 0.3);
+}
+
+
+/* ========================================
+   NOTIFICATION BADGE
+======================================== */
+
+.notification-badge {
+    position: absolute;
+
+    top: -4px;
+    right: -4px;
+
+    min-width: 18px;
+    height: 18px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 2px 5px;
+
+    border-radius: 20px;
+
+    background:
+        #ff3158;
+
+    color: white;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    border:
+        2px solid #061827;
+
+    box-shadow:
+        0 0 10px rgba(255, 49, 88, 0.4);
+}
+
+
+/* ========================================
+   NOTIFICATION PANEL
+======================================== */
+
+.notification-panel {
+    position: absolute;
+
+    top: 58px;
+
+    right: 100px;
+
+    width: 310px;
+
+    padding: 10px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(5, 20, 31, 0.97);
+
+    border:
+        1px solid var(--border);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.45);
+
+    backdrop-filter:
+        blur(20px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        translateY(-10px)
+        scale(0.96);
+
+    transition:
+        0.25s ease;
+}
+
+.notification-panel.active {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+.notification-title {
+    padding:
+        12px;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.08);
+}
+
+.notification-item {
+    display: flex;
+
+    gap: 10px;
+
+    padding:
+        14px 10px;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.05);
+
+    color:
+        rgba(255, 255, 255, 0.75);
+
+    font-size: 13px;
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+
+/* ========================================
+   DASHBOARD CONTAINER
+======================================== */
+
+.dashboard-container {
+    width: 100%;
+
+    max-width: 850px;
+
+    margin: auto;
+
+    padding:
+        35px 20px 70px;
+}
+
+
+/* ========================================
+   WELCOME CARD
+======================================== */
+
+.welcome-card {
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items: center;
+
+    padding: 32px;
+
+    margin-bottom: 22px;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0, 234, 255, 0.12),
+            rgba(22, 119, 255, 0.08)
+        );
+
+    border:
+        1px solid rgba(0, 234, 255, 0.15);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.20);
+}
+
+.welcome-card h1 {
+    text-align: left;
+
+    font-size: 28px;
+
+    margin:
+        7px 0;
+}
+
+.welcome-card h1 span {
+    color:
+        var(--cyan);
+
+    text-shadow:
+        0 0 15px rgba(0, 234, 255, 0.3);
+}
+
+.welcome-card p {
+    color:
+        var(--muted);
+}
+
+.small-text {
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    color:
+        var(--cyan) !important;
+}
+
+.welcome-icon {
+    font-size: 55px;
+
+    filter:
+        drop-shadow(
+            0 0 15px rgba(0, 234, 255, 0.5)
+        );
+
+    animation:
+        floatIcon 3s ease-in-out infinite;
+}
+
+@keyframes floatIcon {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-8px);
+    }
+}
+
+
+/* ========================================
+   CREATE POST
+======================================== */
+
+.create-post,
+.post-card {
+    padding: 24px;
+
+    margin-bottom: 20px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255, 255, 255, 0.055);
+
+    border:
+        1px solid var(--border);
+
+    backdrop-filter:
+        blur(18px);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.18);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.create-post:hover,
+.post-card:hover {
+    border-color:
+        rgba(0, 234, 255, 0.16);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* ========================================
+   POST USER
+======================================== */
+
+.post-user,
+.post-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 18px;
+}
+
+.avatar {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0, 234, 255, 0.18),
+            rgba(22, 119, 255, 0.18)
+        );
+
+    border:
+        1px solid rgba(0, 234, 255, 0.18);
+
+    box-shadow:
+        0 0 15px rgba(0, 234, 255, 0.06);
+}
+
+.post-user small,
+.post-header small {
+    display: block;
+
+    color:
+        var(--muted);
+
+    margin-top: 3px;
+}
+
+
+/* ========================================
+   POST INPUT
+======================================== */
+
+.create-post textarea {
+    width: 100%;
+
+    min-height: 105px;
+
+    resize: vertical;
+
+    padding: 15px;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 14px;
+
+    outline: none;
+
+    background:
+        rgba(0, 0, 0, 0.15);
+
+    transition:
+        0.25s ease;
+}
+
+.create-post textarea::placeholder {
+    color:
+        rgba(255, 255, 255, 0.35);
+}
+
+.create-post textarea:focus {
+    border-color:
+        var(--cyan);
+
+    box-shadow:
+        0 0 20px rgba(0, 234, 255, 0.07);
+}
+
+
+/* ========================================
+   POST ACTIONS
+======================================== */
+
+.post-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 14px;
+}
+
+.post-actions button {
+    padding:
+        9px 13px;
+
+    border:
+        1px solid transparent;
+
+    border-radius: 9px;
+
+    color:
+        rgba(255, 255, 255, 0.7);
+
+    background:
+        rgba(255, 255, 255, 0.05);
+
+    cursor: pointer;
+
+    transition:
+        0.2s ease;
+}
+
+.post-actions button:hover {
+    color:
+        white;
+
+    background:
+        rgba(255, 255, 255, 0.10);
+}
+
+.post-actions .publish-button {
+    margin-left: auto;
+
+    color:
+        #02151e;
+
+    font-weight: 700;
+
+    background:
+        linear-gradient(
+            135deg,
+            white,
+            #9ff5ff
+        );
+
+    border: none;
+}
+
+.post-actions .publish-button:hover {
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 234, 255, 0.16);
+}
+
+
+/* ========================================
+   POST TEXT
+======================================== */
+
+.post-text {
+    line-height: 1.65;
+
+    color:
+        rgba(255, 255, 255, 0.84);
+
+    margin-bottom: 20px;
+
+    word-wrap: break-word;
+}
+
+
+/* ========================================
+   POST STATS
+======================================== */
+
+.post-stats {
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    padding-bottom: 14px;
+
+    color:
+        var(--muted);
+
+    font-size: 12px;
+
+    border-bottom:
+        1px solid var(--border);
+}
+
+
+/* ========================================
+   POST BUTTONS
+======================================== */
+
+.post-buttons {
+    display: flex;
+
+    gap: 8px;
+
+    padding-top: 12px;
+}
+
+.post-buttons button {
+    flex: 1;
+
+    padding: 10px;
+
+    border:
+        1px solid transparent;
+
+    border-radius: 10px;
+
+    color:
+        rgba(255, 255, 255, 0.65);
+
+    background:
+        rgba(255, 255, 255, 0.04);
+
+    cursor: pointer;
+
+    transition:
+        0.25s ease;
+}
+
+.post-buttons button:hover {
+    color:
+        var(--cyan);
+
+    background:
+        rgba(0, 234, 255, 0.08);
+
+    border-color:
+        rgba(0, 234, 255, 0.10);
+}
+
+
+/* ========================================
+   LIKED
+======================================== */
+
+.like-button.liked {
+    color:
+        var(--cyan) !important;
+
+    background:
+        rgba(0, 234, 255, 0.12) !important;
+
+    border-color:
+        rgba(0, 234, 255, 0.16) !important;
+}
+
+.like-button.pop {
+    animation:
+        likePop 0.35s ease;
+}
+
+@keyframes likePop {
+
+    0% {
+        transform:
+            scale(1);
+    }
+
+    45% {
+        transform:
+            scale(1.18);
+    }
+
+    100% {
+        transform:
+            scale(1);
+    }
+}
+
+
+/* ========================================
+   COMMENTS
+======================================== */
+
+.comment-section {
+    display: none;
+
+    margin-top: 15px;
+
+    padding-top: 15px;
+
+    border-top:
+        1px solid var(--border);
+}
+
+.comment-section.active {
+    display: block;
+
+    animation:
+        commentOpen 0.25s ease;
+}
+
+@keyframes commentOpen {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+.comments-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    margin-bottom: 12px;
+}
+
+.comment {
+    padding:
+        9px 12px;
+
+    border-radius: 10px;
+
+    background:
+        rgba(255, 255, 255, 0.045);
+
+    color:
+        rgba(255, 255, 255, 0.78);
+
+    font-size: 13px;
+}
+
+.comment strong {
+    color:
+        var(--cyan);
+
+    margin-right: 5px;
+}
+
+.comment-input {
+    display: flex;
+
+    gap: 7px;
+}
+
+.comment-input input {
+    flex: 1;
+
+    min-width: 0;
+
+    height: 40px;
+
+    padding:
+        0 12px;
+
+    color: white;
+
+    outline: none;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 10px;
+
+    background:
+        rgba(255, 255, 255, 0.04);
+}
+
+.comment-input input:focus {
+    border-color:
+        rgba(0, 234, 255, 0.45);
+}
+
+.send-comment {
+    width: 42px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            white,
+            #9ff5ff
+        );
+
+    color:
+        #02151e;
+
+    cursor: pointer;
+
+    font-weight: 700;
+}
+
+
+/* ========================================
+   LOGIN ENTRANCE
+======================================== */
+
+@keyframes loginEntrance {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px)
+            scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+    .login-container {
+        padding:
+            15px;
+    }
+
+    .login-box {
+        width: 100%;
+    }
+
+    .login-content {
+        padding:
+            38px 24px 30px;
+    }
+
+    .login-content h1 {
+        font-size: 27px;
+    }
+
+    .navbar {
+        padding:
+            0 15px;
+    }
+
+    .brand {
+        font-size: 17px;
+    }
+
+    .logout-button {
+        padding:
+            8px 11px;
+    }
+
+    .notification-panel {
+        position: fixed;
+
+        top: 68px;
+        right: 12px;
+
+        width:
+            calc(100vw - 24px);
+
+        max-width: 310px;
+    }
+
+    .dashboard-container {
+        padding:
+            22px 12px 50px;
+    }
+
+    .welcome-card {
+        padding:
+            22px;
+    }
+
+    .welcome-card h1 {
+        font-size: 23px;
+    }
+
+    .welcome-icon {
+        font-size: 40px;
+    }
+
+    .post-actions {
+        flex-wrap: wrap;
+    }
+
+    .post-actions button {
+        flex: 1;
+    }
+
+    .post-actions .publish-button {
+        width: 100%;
+
+        margin-left: 0;
+    }
+
+    .post-buttons button {
+        font-size: 11px;
+    }
+
+}
